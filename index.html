@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko"> 
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -36,7 +36,6 @@ body {
   padding-bottom: 40px;
 }
 
-/* HEADER */
 .header {
   position: sticky; top: 0; z-index: 50;
   background: var(--bg2);
@@ -53,7 +52,6 @@ body {
 .chip-text { font-size: 13px; font-weight: 600; color: var(--text); }
 .chip-arr  { font-size: 12px; color: var(--text2); }
 
-/* GROUP */
 .group {
   margin: 12px 12px 0;
   border: 1px solid rgba(255,255,255,0.25);
@@ -68,7 +66,6 @@ body {
 }
 .sec-line { flex: 1; height: 1px; background: var(--border); }
 
-/* LIQUIDITY */
 .liq-stack { display: flex; flex-direction: column; gap: 6px; }
 .liq-card {
   background: var(--card); border: 1px solid var(--border);
@@ -103,11 +100,9 @@ body {
   display: flex; flex-direction: column; gap: 3px;
 }
 
-/* TWO COL */
 .two-col { display: flex; gap: 6px; }
 .two-col > * { flex: 1; min-width: 0; overflow: hidden; }
 
-/* SENT */
 .sent-card {
   background: var(--card); border: 1px solid var(--border);
   border-radius: 10px; padding: 14px 12px;
@@ -116,8 +111,10 @@ body {
 .card-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
 
 /* F&G */
-.fg-score { font-family: var(--mono); font-size: 26px; font-weight: 600; text-align: center; margin-top: 4px; }
-.fg-label { font-family: var(--mono); font-size: 9px; font-weight: 600; text-align: center; margin-top: 2px; letter-spacing: 1px; }
+.fg-svg-wrap { width: 100%; padding: 8px 4px 0; }
+.fg-svg-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
+.fg-score { font-family: var(--mono); font-size: 24px; font-weight: 700; text-align: center; margin-top: 8px; }
+.fg-label { font-family: var(--mono); font-size: 9px; font-weight: 600; text-align: center; margin-top: 3px; letter-spacing: 1px; }
 
 /* VIX */
 .vix-score { font-family: var(--mono); font-size: 34px; font-weight: 600; line-height: 1; margin-bottom: 3px; }
@@ -129,7 +126,6 @@ body {
 }
 .vix-note strong { color: var(--green); font-family: var(--mono); }
 
-/* INFO */
 .info-card {
   background: var(--card); border: 1px solid var(--border);
   border-radius: 10px; padding: 14px 12px;
@@ -144,7 +140,6 @@ body {
 .bar-fill   { height: 100%; border-radius: 99px; background: var(--purple); width: 0; transition: width 1s; }
 .bar-labels { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 8px; color: var(--text3); }
 
-/* BOTTOM */
 .bottom-time {
   margin: 16px 12px 0; padding-top: 12px;
   border-top: 1px solid var(--border);
@@ -161,7 +156,6 @@ body {
 .down { color: #ff4d6a; font-weight: 700; }
 .muted{ color: #a0a8c0; }
 
-/* ERROR */
 #debug {
   margin: 10px 12px; padding: 10px;
   background: #1a1a2e; border-radius: 8px;
@@ -185,7 +179,6 @@ body {
   </a>
 </div>
 
-<!-- 3대 유동성 -->
 <div class="group">
   <div class="sec-header">
     <div class="sec-title">🇺🇸 Fed 3대 유동성</div>
@@ -253,7 +246,6 @@ body {
   </div>
 </div>
 
-<!-- 시장 심리 -->
 <div class="group">
   <div class="sec-header">
     <div class="sec-title">📊 시장 심리</div>
@@ -263,21 +255,23 @@ body {
 
     <div class="sent-card">
       <div class="card-title">Fear &amp; Greed</div>
-      <svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;overflow:hidden">
-        <defs>
-          <linearGradient id="arcG" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%"   stop-color="#ff4d6a"/>
-            <stop offset="45%"  stop-color="#ffcc00"/>
-            <stop offset="100%" stop-color="#00e5a0"/>
-          </linearGradient>
-        </defs>
-        <path d="M10,52 A40,40 0 0,1 90,52" fill="none" stroke="#1e2338" stroke-width="8" stroke-linecap="round"/>
-        <path id="arc-fill" d="M10,52 A40,40 0 0,1 90,52" fill="none" stroke="url(#arcG)"
-              stroke-width="8" stroke-linecap="round" stroke-dasharray="125" stroke-dashoffset="125"/>
-        <line id="needle" x1="50" y1="52" x2="50" y2="20"
-              stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
-        <circle cx="50" cy="52" r="4" fill="#1e3060" stroke="white" stroke-width="1.8"/>
-      </svg>
+      <div class="fg-svg-wrap">
+        <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="arcG" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#ff4d6a"/>
+              <stop offset="45%"  stop-color="#ffcc00"/>
+              <stop offset="100%" stop-color="#00e5a0"/>
+            </linearGradient>
+          </defs>
+          <path d="M15,55 A35,35 0 0,1 85,55" fill="none" stroke="#1e2338" stroke-width="7" stroke-linecap="round"/>
+          <path id="arc-fill" d="M15,55 A35,35 0 0,1 85,55" fill="none" stroke="url(#arcG)"
+                stroke-width="7" stroke-linecap="round" stroke-dasharray="110" stroke-dashoffset="110"/>
+          <line id="needle" x1="50" y1="55" x2="50" y2="25"
+                stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+          <circle cx="50" cy="55" r="3.5" fill="#1e3060" stroke="white" stroke-width="1.5"/>
+        </svg>
+      </div>
       <div class="fg-score" id="fg-score">--</div>
       <div class="fg-label" id="fg-label">로딩 중</div>
     </div>
@@ -295,7 +289,6 @@ body {
   </div>
 </div>
 
-<!-- 통화량 & 금리 -->
 <div class="group">
   <div class="sec-header">
     <div class="sec-title">💰 통화량 &amp; 금리</div>
@@ -306,11 +299,7 @@ body {
     <div class="info-card">
       <div class="info-title">한국 M2</div>
       <div class="info-val" id="m2-val" style="color:#c5b3ff">--<span class="info-unit">조</span></div>
-      <div class="bar-wrap">
-        <div class="bar-bg"><div class="bar-fill" id="m2-bar"></div></div>
-        <div class="bar-labels"><span>1년 전</span><span>현재</span></div>
-      </div>
-      <div class="info-sub">전년 동월 대비<br><span id="m2-yoy" style="color:#5a6280">--</span></div>
+      <div class="info-sub" id="m2-date" style="margin-top:10px">--</div>
     </div>
 
     <div class="info-card">
@@ -330,7 +319,7 @@ body {
 </div>
 
 <script>
-const GAS_URL = 'https://script.google.com/macros/s/AKfycby6jsHZOIOwfJLUVypRfoa3zEtu2g3BIDW6aPs2SrOitd5skGvHkFyHc9_kDO314XY/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbwqOwwQR1T3FtGMsSHaFQ6k98QOw6Nb0-PsdpqFBA4F7SJgHVC9gh0bsu-co6A3Z3A/exec';
 
 const FOMC = [
   '2026-01-28','2026-03-18','2026-04-29','2026-06-17',
@@ -354,11 +343,12 @@ function setLiq(id, data) {
 
 function setGauge(s) {
   var ang = (1 - s / 100) * Math.PI;
-  var nx  = (50 + 34 * Math.cos(ang)).toFixed(1);
-  var ny  = (52 - 34 * Math.sin(ang)).toFixed(1);
+  var cx = 50, cy = 55, r = 26;
+  var nx  = (cx + r * Math.cos(ang)).toFixed(1);
+  var ny  = (cy - r * Math.sin(ang)).toFixed(1);
   document.getElementById('needle').setAttribute('x2', nx);
   document.getElementById('needle').setAttribute('y2', ny);
-  document.getElementById('arc-fill').setAttribute('stroke-dashoffset', (125 * (1 - s / 100)).toFixed(1));
+  document.getElementById('arc-fill').setAttribute('stroke-dashoffset', (110 * (1 - s / 100)).toFixed(1));
   var c = s <= 25 ? '#ff4d6a' : s <= 45 ? '#ff9a3c' : s >= 75 ? '#00e5a0' : s >= 55 ? '#7ed6a0' : '#ffcc00';
   document.getElementById('fg-score').style.color = c;
   document.getElementById('fg-label').style.color = c;
@@ -379,12 +369,10 @@ async function load() {
     const res = await fetch(GAS_URL);
     const d   = await res.json();
 
-    // 3대 유동성
     setLiq('res', d.reserves);
     setLiq('tga', d.tga);
     setLiq('rrp', d.rrp);
 
-    // VIX
     var vv = d.vix.current;
     var vd = vv - d.vix.previous;
     document.getElementById('vix-score').textContent = vv.toFixed(1);
@@ -394,7 +382,6 @@ async function load() {
       (vd >= 0 ? '▲' : '▼') + ' ' + (vd >= 0 ? '+' : '') + vd.toFixed(1) +
       '</span> 전일 대비';
 
-    // 기준금리
     var dv    = d.dff.current;
     var today = new Date(); today.setHours(0, 0, 0, 0);
     var next  = FOMC.find(function(dt) { return new Date(dt) >= today; });
@@ -406,23 +393,18 @@ async function load() {
       '<span style="color:#ffcc00;font-family:\'IBM Plex Mono\',monospace;font-size:10px">' +
       (next ? next.replace(/-/g, '.') : '일정 확인 필요') + '</span>';
 
-    // 한국 M2
-    var mv  = d.m2.current;         // billions KRW
-    var jo  = Math.round(mv / 1000); // → 조
-    document.getElementById('m2-val').innerHTML =
-      jo.toLocaleString() + '<span class="info-unit">조</span>';
-    if (d.m2.history && d.m2.history.length >= 13) {
-      var prev12 = d.m2.history[12];
-      var yoy    = ((mv - prev12) / prev12 * 100).toFixed(1);
-      var yc     = parseFloat(yoy) >= 0 ? '#00e5a0' : '#ff4d6a';
-      document.getElementById('m2-yoy').innerHTML =
-        '<span style="color:' + yc + '">' + (parseFloat(yoy) >= 0 ? '+' : '') + yoy + '%</span>';
-      document.getElementById('m2-bar').style.width =
-        Math.min(Math.max(parseFloat(yoy) / 10 * 100, 0), 100) + '%';
+    // 한국 M2 (ECOS 십억원 → 조원)
+    if (d.m2 && !d.m2.error) {
+      var jo = Math.round(d.m2.current / 1000);
+      document.getElementById('m2-val').innerHTML =
+        jo.toLocaleString() + '<span class="info-unit">조</span>';
+      document.getElementById('m2-date').textContent = '기준: ' + (d.m2.date || '');
+    } else {
+      document.getElementById('m2-val').innerHTML = '오류';
     }
 
     // Fear & Greed
-    if (d.fg && !d.fg.error) {
+    if (d.fg && typeof d.fg.value === 'number') {
       var s = d.fg.value;
       document.getElementById('fg-score').textContent = s;
       document.getElementById('fg-label').textContent = fgLabel(s);
