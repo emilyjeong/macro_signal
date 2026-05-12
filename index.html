@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="ko">
-<head> 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#0a0a09">
 <meta name="color-scheme" content="dark">
-<title>EM Dashboard</title>
+<title>시장 지표</title>
 
 <!-- 디자인 시스템 폰트 -->
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -413,171 +411,149 @@ body {
   letter-spacing: 1.5px;
 }
 </style>
-
 </head>
 <body>
 
-<!-- ── 헤더 ── -->
 
+<!-- ── 헤더 ── -->
 <div class="header">
-  <div class="logo">MACRO SIGNAL</div>
-  <a class="blog-chip" href="https://blog.naver.com/optimal_life" target="_blank">
-    <span style="font-size:13px">📝</span>
-    <span class="chip-text">블로그</span>
-    <span class="chip-arr">↗</span>
-  </a>
+<div class="logo">시장 지표</div>
+<a class="blog-chip" href="https://blog.naver.com/optimal_life" target="_blank">
+<span style="font-size:13px">📝</span>
+<span class="chip-text">블로그</span>
+<span class="chip-arr">↗</span>
+</a>
 </div>
 
 <!-- ── 탭 바 ── -->
-
 <div class="tab-bar">
-  <button class="tab-btn active" id="btn-macro"  onclick="switchTab('macro')">MACRO SIGNAL</button>
-  <button class="tab-btn"        id="btn-market" onclick="switchTab('market')">주가 &amp; 시장</button>
+<button class="tab-btn active" id="btn-macro"  onclick="switchTab('macro')">거시 지표</button>
+<button class="tab-btn"        id="btn-market" onclick="switchTab('market')">주가 &amp; 시장</button>
 </div>
+
 
 <!-- ══════════════════════════════
-     탭 1: MACRO SIGNAL
+탭 1: 거시 지표
 ══════════════════════════════ -->
-
 <div class="tab-pane active" id="tab-macro">
-
-  <div class="group">
-    <div class="sec-header"><div class="sec-title">🇺🇸 FED 3대 유동성</div><div class="sec-line"></div></div>
-    <div class="liq-stack">
-
-```
-  <div class="liq-card c1">
-    <div class="liq-top">
-      <div><div class="liq-num">01</div><div class="liq-name">지급준비금</div><div class="liq-id">WRESBAL · 주별</div></div>
-      <div class="liq-right">
-        <div class="liq-val" id="res-val" style="color:var(--purple)">--</div>
-        <div class="liq-chg" id="res-chg"></div>
-        <div class="liq-date" id="res-date"></div>
-      </div>
-    </div>
-    <div class="liq-desc">
-      <div><span class="muted">잔고 ↑ </span><span class="up">증가</span><span class="muted"> → 유동성 </span><span class="up">증가</span></div>
-      <div><span class="muted">잔고 ↓ </span><span class="down">감소</span><span class="muted"> → 유동성 </span><span class="down">감소</span></div>
-    </div>
-  </div>
-
-  <div class="liq-card c2">
-    <div class="liq-top">
-      <div><div class="liq-num">02</div><div class="liq-name">TGA (재무부 계좌)</div><div class="liq-id">WTREGEN · 주별</div></div>
-      <div class="liq-right">
-        <div class="liq-val" id="tga-val" style="color:var(--accent)">--</div>
-        <div class="liq-chg" id="tga-chg"></div>
-        <div class="liq-date" id="tga-date"></div>
-      </div>
-    </div>
-    <div class="liq-desc">
-      <div><span class="muted">잔고 ↑ </span><span class="up">증가</span><span class="muted"> → 유동성 </span><span class="down">감소</span></div>
-      <div><span class="muted">잔고 ↓ </span><span class="down">감소</span><span class="muted"> → 유동성 </span><span class="up">증가</span></div>
-    </div>
-  </div>
-
-  <div class="liq-card c3">
-    <div class="liq-top">
-      <div><div class="liq-num">03</div><div class="liq-name">역레포 (RRP)</div><div class="liq-id">RRPONTSYD · 일별</div></div>
-      <div class="liq-right">
-        <div class="liq-val" id="rrp-val" style="color:var(--info)">--</div>
-        <div class="liq-chg" id="rrp-chg"></div>
-        <div class="liq-date" id="rrp-date"></div>
-      </div>
-    </div>
-    <div class="liq-desc">
-      <div><span class="muted">잔고 ↑ </span><span class="up">증가</span><span class="muted"> → 유동성 </span><span class="down">감소</span></div>
-      <div><span class="muted">잔고 ↓ </span><span class="down">감소</span><span class="muted"> → 유동성 </span><span class="up">증가</span></div>
-    </div>
-  </div>
-
+<div class="group">
+<div class="sec-header"><div class="sec-title">🇺🇸 FED 3대 유동성</div><div class="sec-line"></div></div>
+<div class="liq-stack">
+<div class="liq-card c1">
+<div class="liq-top">
+<div><div class="liq-num">01</div><div class="liq-name">지급준비금</div><div class="liq-id">WRESBAL · 주별</div></div>
+<div class="liq-right">
+<div class="liq-val" id="res-val" style="color:var(--purple)">--</div>
+<div class="liq-chg" id="res-chg"></div>
+<div class="liq-date" id="res-date"></div>
 </div>
-```
-
-  </div>
-
-  <div class="group">
-    <div class="sec-header"><div class="sec-title">📊 시장 심리</div><div class="sec-line"></div></div>
-    <div class="sent-card">
-      <div class="card-title">VIX 지수</div>
-      <div class="vix-score" id="vix-score">--</div>
-      <div class="vix-chg"   id="vix-chg"></div>
-      <div class="vix-note"><strong>40↑</strong> 투자 타이밍 · 시차 감안 40부터 분할매수 (메르)</div>
-    </div>
-  </div>
-
-  <div class="group">
-    <div class="sec-header"><div class="sec-title">💰 통화량 &amp; 금리</div><div class="sec-line"></div></div>
-    <div class="two-col">
-      <div class="info-card">
-        <div class="info-title">한국 M2</div>
-        <div class="info-val" id="m2-val" style="color:var(--accent)">--<span class="info-unit">조</span></div>
-        <div class="info-sub" id="m2-date">--</div>
-      </div>
-      <div class="info-card">
-        <div class="info-title">미국 기준금리</div>
-        <div class="info-val" id="dff-val" style="color:var(--accent)">--<span class="info-unit">%</span></div>
-        <div class="info-sub" id="dff-sub"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="group">
-    <div class="sec-header"><div class="sec-title">🇺🇸 미국 고용지표</div><div class="sec-line"></div></div>
-    <div class="two-col">
-      <div class="info-card">
-        <div class="info-title">실업률</div>
-        <div class="info-val" id="unr-val" style="color:var(--accent)">--<span class="info-unit">%</span></div>
-        <div class="info-sub" id="unr-sub"></div>
-      </div>
-      <div class="info-card">
-        <div class="info-title">비농업 고용</div>
-        <div class="info-val" id="pay-val" style="color:var(--accent)">--<span class="info-unit">K</span></div>
-        <div class="info-sub" id="pay-sub"></div>
-      </div>
-    </div>
-  </div>
-
+</div>
+<div class="liq-desc">
+<div><span class="muted">잔고 ↑ </span><span class="up">증가</span><span class="muted"> → 유동성 </span><span class="up">증가</span></div>
+<div><span class="muted">잔고 ↓ </span><span class="down">감소</span><span class="muted"> → 유동성 </span><span class="down">감소</span></div>
+</div>
+</div>
+<div class="liq-card c2">
+<div class="liq-top">
+<div><div class="liq-num">02</div><div class="liq-name">TGA (재무부 계좌)</div><div class="liq-id">WTREGEN · 주별</div></div>
+<div class="liq-right">
+<div class="liq-val" id="tga-val" style="color:var(--accent)">--</div>
+<div class="liq-chg" id="tga-chg"></div>
+<div class="liq-date" id="tga-date"></div>
+</div>
+</div>
+<div class="liq-desc">
+<div><span class="muted">잔고 ↑ </span><span class="up">증가</span><span class="muted"> → 유동성 </span><span class="down">감소</span></div>
+<div><span class="muted">잔고 ↓ </span><span class="down">감소</span><span class="muted"> → 유동성 </span><span class="up">증가</span></div>
+</div>
+</div>
+<div class="liq-card c3">
+<div class="liq-top">
+<div><div class="liq-num">03</div><div class="liq-name">역레포 (RRP)</div><div class="liq-id">RRPONTSYD · 일별</div></div>
+<div class="liq-right">
+<div class="liq-val" id="rrp-val" style="color:var(--info)">--</div>
+<div class="liq-chg" id="rrp-chg"></div>
+<div class="liq-date" id="rrp-date"></div>
+</div>
+</div>
+<div class="liq-desc">
+<div><span class="muted">잔고 ↑ </span><span class="up">증가</span><span class="muted"> → 유동성 </span><span class="down">감소</span></div>
+<div><span class="muted">잔고 ↓ </span><span class="down">감소</span><span class="muted"> → 유동성 </span><span class="up">증가</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group">
+<div class="sec-header"><div class="sec-title">📊 시장 심리</div><div class="sec-line"></div></div>
+<div class="sent-card">
+<div class="card-title">VIX 지수</div>
+<div class="vix-score" id="vix-score">--</div>
+<div class="vix-chg"   id="vix-chg"></div>
+<div class="vix-note"><strong>40↑</strong> 투자 타이밍 · 시차 감안 40부터 분할매수 (메르)</div>
+</div>
+</div>
+<div class="group">
+<div class="sec-header"><div class="sec-title">💰 통화량 &amp; 금리</div><div class="sec-line"></div></div>
+<div class="two-col">
+<div class="info-card">
+<div class="info-title">한국 M2</div>
+<div class="info-val" id="m2-val" style="color:var(--accent)">--<span class="info-unit">조</span></div>
+<div class="info-sub" id="m2-date">--</div>
+</div>
+<div class="info-card">
+<div class="info-title">미국 기준금리</div>
+<div class="info-val" id="dff-val" style="color:var(--accent)">--<span class="info-unit">%</span></div>
+<div class="info-sub" id="dff-sub"></div>
+</div>
+</div>
+</div>
+<div class="group">
+<div class="sec-header"><div class="sec-title">🇺🇸 미국 고용지표</div><div class="sec-line"></div></div>
+<div class="two-col">
+<div class="info-card">
+<div class="info-title">실업률</div>
+<div class="info-val" id="unr-val" style="color:var(--accent)">--<span class="info-unit">%</span></div>
+<div class="info-sub" id="unr-sub"></div>
+</div>
+<div class="info-card">
+<div class="info-title">비농업 고용</div>
+<div class="info-val" id="pay-val" style="color:var(--accent)">--<span class="info-unit">K</span></div>
+<div class="info-sub" id="pay-sub"></div>
+</div>
+</div>
+</div>
 </div><!-- /tab-macro -->
 
+
 <!-- ══════════════════════════════
-     탭 2: 주가 & 시장
+탭 2: 주가 & 시장
 ══════════════════════════════ -->
-
 <div class="tab-pane" id="tab-market">
-
-  <div class="market-group">
-    <div class="sec-header"><div class="sec-title">🇺🇸 미국 시장 지수</div><div class="sec-line"></div></div>
-    <div id="wrap-us-index"><div class="mkt-loading">LOADING ···</div></div>
-  </div>
-
-  <div class="market-group">
-    <div class="sec-header"><div class="sec-title">🇰🇷 한국 시장 지수</div><div class="sec-line"></div></div>
-    <div id="wrap-kr-index"><div class="mkt-loading">LOADING ···</div></div>
-  </div>
-
-  <div class="market-group">
-    <div class="sec-header"><div class="sec-title">🇺🇸 미국 개별주</div><div class="sec-line"></div></div>
-    <div id="wrap-us-stocks"><div class="mkt-loading">LOADING ···</div></div>
-  </div>
-
-  <div class="market-group">
-    <div class="sec-header"><div class="sec-title">🇰🇷 한국 개별주</div><div class="sec-line"></div></div>
-    <div id="wrap-kr-stocks"><div class="mkt-loading">LOADING ···</div></div>
-  </div>
-
+<div class="market-group">
+<div class="sec-header"><div class="sec-title">🇺🇸 미국 시장 지수</div><div class="sec-line"></div></div>
+<div id="wrap-us-index"><div class="mkt-loading">LOADING ···</div></div>
+</div>
+<div class="market-group">
+<div class="sec-header"><div class="sec-title">🇰🇷 한국 시장 지수</div><div class="sec-line"></div></div>
+<div id="wrap-kr-index"><div class="mkt-loading">LOADING ···</div></div>
+</div>
+<div class="market-group">
+<div class="sec-header"><div class="sec-title">🇺🇸 미국 개별주</div><div class="sec-line"></div></div>
+<div id="wrap-us-stocks"><div class="mkt-loading">LOADING ···</div></div>
+</div>
+<div class="market-group">
+<div class="sec-header"><div class="sec-title">🇰🇷 한국 개별주</div><div class="sec-line"></div></div>
+<div id="wrap-kr-stocks"><div class="mkt-loading">LOADING ···</div></div>
+</div>
 </div><!-- /tab-market -->
-
 <div id="debug"></div>
-
 <div class="bottom-time">
-  <div class="time-str"><span class="live-dot"></span><span id="clock">--:--:--</span></div>
-  <div class="date-str" id="dateline">----.--.--</div>
+<div class="time-str"><span class="live-dot"></span><span id="clock">--:--:--</span></div>
+<div class="date-str" id="dateline">----.--.--</div>
 </div>
 
-<!-- config.js 먼저 로드 (GAS URL 관리) -->
 
-<script src="config.js"></script>
+<!-- config.js 먼저 로드 (GAS URL 관리) --><script src="config.js"></script>
 
 <script>
 /* ────── 디자인 시스템 컬러 (JS 참조용) ────── */
@@ -778,6 +754,5 @@ function loadMarket() {
 loadMacro();
 loadMarket();
 </script>
-
 </body>
 </html>
